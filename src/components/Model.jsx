@@ -7,9 +7,13 @@ export default function Model({ form, setForm, dialogRef, openDialog, closeDialo
             <dialog ref={dialogRef}>
                 <button onClick={closeDialog} >X</button>
                 <form className="product-form" onSubmit={(e) => {
-                    handleSubmit(e)
-                    console.log("Submitted", e);
+                    const isValid = handleSubmit(e);
+                    if (isValid) {
+                    console.log("Submitted successfully");
                     closeDialog();
+                    } else {
+                    console.log("Validation failed, dialog remains open");
+                    }
                 }}>
                     <label htmlFor="name" >Product Name</label>
                     <input

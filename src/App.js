@@ -18,9 +18,7 @@ const App = () => {
   const dialogRef = useRef('');
 
   const openDialog = (payload) => {
-    console.log("Payload:", payload.target.id);
     if(payload.target.id === "add_product"){
-      console.log("Add button clicked");
       setForm({ id: null, name: "", price: "", category: "", stock: "", description: "", tags: [], createdAt: "" });
       dialogRef.current.showModal();
       return
@@ -58,10 +56,8 @@ const App = () => {
     const errs = validate();
     if (Object.keys(errs).length) {
       setErrors(errs);
-      return;
+      return false;
     }
-    console.log("Form submitted:", form);
-    console.log(form.id)
     if (form.id) {
       setProducts(prev =>
         prev.map(p =>
@@ -74,16 +70,13 @@ const App = () => {
     }
     setForm({ id: null, name: "", price: "", category: "", stock: "", description: "", tags: [], createdAt: "" });
     setErrors({});
+    return true;
   };
 
   const handleEdit = ({e, p}) => {
     setForm(p)
-    console.log("Editing product:", p);
-    console.log(e);
     openDialog(e);
   };
-
-  
 
   // Debounced search effect
   useEffect(() => {
