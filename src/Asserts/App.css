@@ -1,0 +1,51 @@
+.container{
+    border: 1px solid black;
+    padding: 0px;
+    margin: 0px;
+
+}
+
+h2{
+    text-align: center;
+    border: 1px solid black;
+    background-color: lightgray;
+    color: darkgray;
+    padding: 0px;
+    margin: 0px;
+}
+.search-bar{
+    margin: 10px;
+    text-align:start;
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.bar {
+  display: flex;
+  width: 100%;
+}
+
+.bar button {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+  border: none;
+}
+
+.bar button.active {
+  background-color: #007BFF;
+  color: white;
+}
+
+.model-div{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin: 10px;
+  }
+.model-div span{
+    font-size: 15px;
+    font-weight: bold;
+    margin-right: 10px;
+  }

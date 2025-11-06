@@ -1,0 +1,11 @@
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+    border: 2px solid #333;
+    padding: 10px;
+    text-align: left;
+  }
